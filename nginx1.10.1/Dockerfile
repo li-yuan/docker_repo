@@ -13,7 +13,7 @@ RUN add-apt-repository -y ppa:nginx/stable
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y nginx
 
-COPY nginx.conf /etc/nginx/conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80 443
 
