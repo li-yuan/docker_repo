@@ -1,0 +1,12 @@
+# Version 0.1
+ehr:
+  restart: always
+  image: repo/ehr:python2
+  working_dir: /usr/src/ehr
+  volumes:
+    - ./ehr:/usr/src/ehr
+  expose:
+    - "48069"
+  ports:
+    - "48069:48069"
+  command: ./start -c openerp-server.conf
