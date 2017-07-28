@@ -2,25 +2,25 @@
 # This is based on phusion/baseimage-docker base Ubuntu image.
 # Github: https://github.com/phusion/baseimage-docker
 # Supervisor
-# VERSION 0.0.1
+# VERSION 0.0.2
 # Author: Ken
 
 # 基础镜像信息
-FROM phusion/baseimage:0.9.19
+FROM phusion/baseimage:0.9.22
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
 # ...put your own build instructions here...
 
-# 时区
-RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
 # 清华大学源
 RUN mv /etc/apt/sources.list /etc/apt/sources.list.1
 COPY sources.list /etc/apt/sources.list
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
+                tzdat \
                 vim \
                 curl \
                 wget \
@@ -30,6 +30,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
                 python-pip \
                 supervisor
 
+ENV TZ Asia/Shanghai
 RUN mkdir /etc/service/supervisor
 ADD supervisor.sh /etc/service/supervisor/run
 
