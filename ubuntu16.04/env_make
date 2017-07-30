@@ -1,5 +1,0 @@
-## PORTS = -p PORT:PORT
-
-## VOLUMES = -v "PATH":PATH
-
-## ENV = -e SOME_KEY=SOME_VALUE
