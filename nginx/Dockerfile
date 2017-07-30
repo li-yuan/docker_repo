@@ -1,13 +1,10 @@
-# Base Nginx 1.10.1 image
-# Base Image: repo/ubuntu:16.04_64_Base
-# VERSION 0.0.1
-# Authon: Ken
+# Base Nginx stable image
+# Base Image: HLY/ubuntu:16.04
+# VERSION 0.0.2
+# Authon: HLY
 
 # 基础镜像信息
-FROM repo/ubuntu:16.04_64_Base
-
-# 维护者信息
-MAINTAINER Ken ken.han.coder@aliyun.com
+FROM hly/ubuntu:16.04
 
 RUN add-apt-repository -y ppa:nginx/stable
 RUN apt-get update

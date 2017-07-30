@@ -1,9 +1,8 @@
 # Mine Base Ubuntu 16.04 Image 
 # This is based on phusion/baseimage-docker base Ubuntu image.
 # Github: https://github.com/phusion/baseimage-docker
-# Supervisor
 # VERSION 0.0.2
-# Author: Ken
+# Author: HLY
 
 # 基础镜像信息
 FROM phusion/baseimage:0.9.22
@@ -20,7 +19,7 @@ COPY sources.list /etc/apt/sources.list
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
-                tzdat \
+                tzdata \
                 vim \
                 curl \
                 wget \
